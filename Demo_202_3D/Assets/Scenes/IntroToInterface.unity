@@ -271,13 +271,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.11093034, y: -0, z: -0, w: 0.99382824}
+  m_LocalRotation: {x: 0.116210036, y: -0, z: -0, w: 0.99322474}
   m_LocalPosition: {x: -7.4, y: 8.23, z: -21.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -12.738, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 13.347, y: 0, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -908,10 +908,15 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe418b1c536a50741bf347c783c5cdc9, type: 3}
---- !u!1 &1077612428 stripped
+--- !u!1 &1092070444 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5098326000223518042, guid: fe418b1c536a50741bf347c783c5cdc9, type: 3}
-  m_PrefabInstance: {fileID: 842500220}
+  m_PrefabInstance: {fileID: 789679338}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1095977327 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5098326000223518042, guid: fe418b1c536a50741bf347c783c5cdc9, type: 3}
+  m_PrefabInstance: {fileID: 402964163}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1315858800
 GameObject:
@@ -1035,11 +1040,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.01
---- !u!1 &1375419811 stripped
+--- !u!1 &1446020885
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 5098326000223518042, guid: fe418b1c536a50741bf347c783c5cdc9, type: 3}
-  m_PrefabInstance: {fileID: 943184660}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1446020887}
+  - component: {fileID: 1446020888}
+  m_Layer: 0
+  m_Name: InstantiatorGO
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1446020887
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446020885}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.39, y: 9.55, z: 4.05}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1446020888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446020885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e914acfc0b257aa458885548142353ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  number: 500
+  boxPrefab: {fileID: 5098326000223518042, guid: fe418b1c536a50741bf347c783c5cdc9, type: 3}
 --- !u!1001 &1497877273
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1183,13 +1229,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79c6c2d070ccafc45a773d747c673840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  box1: {fileID: 11062290}
-  box2: {fileID: 603816479}
+  speed: 0.05
+  box1: {fileID: 603816479}
+  box2: {fileID: 1092070444}
   boxes:
-  - {fileID: 1077612428}
-  - {fileID: 1375419811}
-  - {fileID: 1903722936}
+  - {fileID: 1095977327}
+  - {fileID: 11062290}
+  - {fileID: 1837513709}
 --- !u!4 &1576737661
 Transform:
   m_ObjectHideFlags: 0
@@ -1205,10 +1251,10 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1903722936 stripped
+--- !u!1 &1837513709 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5098326000223518042, guid: fe418b1c536a50741bf347c783c5cdc9, type: 3}
-  m_PrefabInstance: {fileID: 996821554}
+  m_PrefabInstance: {fileID: 887290399}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1987437862
 GameObject:
@@ -1332,6 +1378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   number: 999
+  boxPrefab: {fileID: 0}
 --- !u!1001 &7097178415723881675
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1410,3 +1457,4 @@ SceneRoots:
   - {fileID: 996821554}
   - {fileID: 1533781778}
   - {fileID: 1576737661}
+  - {fileID: 1446020887}
