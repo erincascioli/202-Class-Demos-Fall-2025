@@ -1,5 +1,10 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
+
+/// <summary>
+/// Uses the Legacy Input Manager system
+/// </summary>
 public class FishMovementWithInputManager : MonoBehaviour
 {
 
@@ -13,13 +18,18 @@ public class FishMovementWithInputManager : MonoBehaviour
     /// </summary>
     public float fishSpeed;
 
+    /// <summary>
+    /// Vector representing the 4 cardinal directions of movement
+    /// </summary>
+    public Vector3 fishDirection;
+
+
     // ------------------------------------------------------------------------
     // Rotate the fish every frame!  
     // how much to rotate - no more than 1 degree per frame
     // cumulative rotation
     public float speedOfRotation;
     public float totalRotation;
-
     // ------------------------------------------------------------------------
 
 
@@ -31,11 +41,17 @@ public class FishMovementWithInputManager : MonoBehaviour
 
     void Update()
     {
+        // Every frame, inspect the mouse's position in screen space
+        Debug.Log("Pixels: " + Input.mousePosition);
+        Vector3 mousePositionInWorldSpace = 
+            Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Debug.Log("Screen space: " + mousePositionInWorldSpace);
+
         // Start by moving fish independently on X or Y axis using per-frame movement.
-        //MoveFish();
+        MoveFish();
 
         // Rotate the fish
-        RotateFish();
+        //RotateFish();
     }
 
     public void RotateFish()
@@ -52,7 +68,7 @@ public class FishMovementWithInputManager : MonoBehaviour
 
 
     /// <summary>
-    /// Use Unity's Input Manager system to move the fish in 4 cardinal directions
+    /// Use Unity's Input Package system to move the fish in 4 cardinal directions
     ///    with WASD.
     /// </summary>
     public void MoveFish()
@@ -71,22 +87,23 @@ public class FishMovementWithInputManager : MonoBehaviour
             // Move the object a tiny unit left
             fishPosition.x -= fishSpeed;
         }
-        //else if ()                       // Right
+        if (Input.GetKey(KeyCode.D))                       // Right
         {
-            // How to move the fish? 
+            // Move the object a tiny unit right
+            fishPosition.x += fishSpeed;
         }
-        //else if ()                       // Up
+        if (Input.GetKey(KeyCode.W))                       // Up
         {
-            // How to move the fish?
+            // Move the object a tiny unit left
+            fishPosition.y += fishSpeed;
         }
-        //else if ()                       // Down
+        if (Input.GetKey(KeyCode.S))                       // Down
         {
-            // How to move the fish?
+            // Move the object a tiny unit left
+            fishPosition.y -= fishSpeed;
         }
 
         // Transport the fish to that position
         fish.transform.position = fishPosition;
     }
-
-
 }
