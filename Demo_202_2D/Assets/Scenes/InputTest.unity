@@ -420,7 +420,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fish: {fileID: 512025009}
-  fishSpeed: 0.02
+  fishSpeed: 2
   fishDirection: {x: 0, y: 0, z: 0}
 --- !u!1 &2047999939
 GameObject:

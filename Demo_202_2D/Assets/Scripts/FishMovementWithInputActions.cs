@@ -1,3 +1,4 @@
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -66,8 +67,14 @@ public class FishMovementWithInputActions : MonoBehaviour
         // such that it is modifiable.
         Vector3 fishPosition = fish.transform.position;
 
+        // **** Friday 9/26: 
+        // **** Calculate a velocity here!
+        // **** Then change to be time-based instead of frame-based!
+
+        Vector3 velocity = fishDirection * fishSpeed * Time.deltaTime;
+
         // Move the fish in its direction
-        fishPosition += fishDirection * fishSpeed;
+        fishPosition += velocity;
 
         // Transport the fish to that position
         fish.transform.position = fishPosition;
