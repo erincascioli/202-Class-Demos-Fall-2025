@@ -1,4 +1,3 @@
-using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -35,11 +34,14 @@ public class FishMovementWithInputActions : MonoBehaviour
         // Moving fish along X or Y axis using per-frame movement.
         MoveFish();
 
+        // USEFUL FOR DEBUGGING WITH MOUSE INFORMATION
+        /*
         // Every frame, inspect the mouse's position in screen space
         Debug.Log("Pixels: " + Mouse.current.position.ReadValue());
         Vector3 mousePositionInWorldSpace =
             Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         Debug.Log("Screen space: " + mousePositionInWorldSpace);
+        */
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -51,10 +53,12 @@ public class FishMovementWithInputActions : MonoBehaviour
         Vector3 playerDirection3D = new Vector3(playerDirection2D.x, playerDirection2D.y, 0);
 
         // Visualize what the direction is:
-        Debug.Log(playerDirection3D);
+        //Debug.Log(playerDirection3D);
 
-        // Set the fish's direction
+        // Set the fish's direction vector, and rotate in the correct direction.
         fishDirection = playerDirection3D;
+        float zRotation = Mathf.Atan2(fishDirection.y, fishDirection.x) * Mathf.Rad2Deg;
+        fish.transform.rotation = Quaternion.Euler(0, 0, zRotation);
     }
 
     /// <summary>
@@ -69,8 +73,7 @@ public class FishMovementWithInputActions : MonoBehaviour
 
         // **** Friday 9/26: 
         // **** Calculate a velocity here!
-        // **** Then change to be time-based instead of frame-based!
-
+        // **** Then change to be time-based instead of frame-based
         Vector3 velocity = fishDirection * fishSpeed * Time.deltaTime;
 
         // Move the fish in its direction

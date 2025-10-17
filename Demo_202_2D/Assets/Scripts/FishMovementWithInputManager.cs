@@ -41,11 +41,14 @@ public class FishMovementWithInputManager : MonoBehaviour
 
     void Update()
     {
+        // USEFUL FOR DEBUGGING
+        /*
         // Every frame, inspect the mouse's position in screen space
         Debug.Log("Pixels: " + Input.mousePosition);
         Vector3 mousePositionInWorldSpace = 
             Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Debug.Log("Screen space: " + mousePositionInWorldSpace);
+        */
 
         // Start by moving fish independently on X or Y axis using per-frame movement.
         MoveFish();
@@ -82,7 +85,7 @@ public class FishMovementWithInputManager : MonoBehaviour
         if (Input.GetKey(KeyCode.A))				// Left
         {
             // Prove to ourselves that the key presses are working!
-            UnityEngine.Debug.Log("Pressing A");
+            //Debug.Log("Pressing A");
 
             // Move the object a tiny unit left
             fishPosition.x -= fishSpeed;
