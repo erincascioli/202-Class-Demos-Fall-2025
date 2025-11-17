@@ -10,10 +10,21 @@ public abstract class Agent : MonoBehaviour
     // --------------------------------------------------------------------------------------------
     //              FIELDS ALL CHILD CLASSES NEED
     // --------------------------------------------------------------------------------------------
-    public Vector3 velocity;
+   
+    // Serialize field to keep it protected from other Agent instances
+    [SerializeField]
+    private Vector3 velocity;
+
+    // Would be beneficial to change these to private access modifier too.
     public Vector3 acceleration;
     public float maxSpeed;
     public float maxForce;
+
+    // Other agents need to access this for future positions? Write a property!
+    public Vector3 Velocity
+    {
+        get { return velocity; }
+    }
 
     void Start()
     {
